@@ -4,7 +4,7 @@ export default function HowItWorks() {
       number: "01",
       title: "Discovery Generator",
       description:
-        "Odgovori na 15 ključnih pitanja o tvom poslovnom kontekstu, ciljevima i resursima. AI evaluira sve ideje kroz prošireni RICE framework.",
+        "Odgovorite na 15 ključnih pitanja o vašem poslovnom kontekstu, ciljevima i resursima. AI procjenjuje sve ideje kroz prošireni RICE framework.",
       icon: "🔍",
       color: "bg-blue-50 border-blue-200",
       textColor: "text-blue-600",
@@ -13,7 +13,7 @@ export default function HowItWorks() {
       number: "02",
       title: "Business PRD Generator",
       description:
-        "Definiraj target korisnike, value proposition i MVP scope. AI kreira sveobuhvatan Business PRD s ROI procjenom i Go/Refine/Hold preporukom.",
+        "Definirajte target korisnike, value proposition i MVP scope. AI kreira sveobuhvatan Business PRD s ROI procjenom i Go/Refine/Hold preporukom.",
       icon: "📋",
       color: "bg-green-50 border-green-200",
       textColor: "text-green-600",
@@ -22,7 +22,7 @@ export default function HowItWorks() {
       number: "03",
       title: "Tech PRD Generator",
       description:
-        "Generiraj Claude Code-ready tehnički PRD s arhitekturom, database schema, API design i implementation planom. Copy-paste u Claude Code i pokreni!",
+        "Generirajte Claude Code-ready tehnički PRD s arhitekturom, database schema, API design i implementation planom. Copy-paste u Claude Code i pokrenite!",
       icon: "⚡",
       color: "bg-purple-50 border-purple-200",
       textColor: "text-purple-600",
@@ -37,7 +37,7 @@ export default function HowItWorks() {
             Kako funkcionira?
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Sistematičan proces u 3 koraka - od nejasne ideje do implementacije
+            Sustavni proces u 3 koraka - od nejasne ideje do implementacije
           </p>
         </div>
 

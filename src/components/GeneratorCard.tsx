@@ -64,10 +64,10 @@ export default function GeneratorCard({
         <div className="rounded-lg bg-blue-50 p-3 text-sm">
           <div className="font-medium text-blue-900">Kako koristiti:</div>
           <ol className="mt-1 list-decimal list-inside text-blue-800 space-y-1">
-            <li>Klikni "Copy Generator"</li>
-            <li>Otvori Claude ili ChatGPT</li>
-            <li>Paste generator i odgovori na pitanja</li>
-            <li>Dobij strukturiran output</li>
+            <li>Kliknite "Copy Generator"</li>
+            <li>Otvorite Claude ili ChatGPT</li>
+            <li>Paste generator i odgovorite na pitanja</li>
+            <li>Dobijte strukturiran output</li>
           </ol>
         </div>
       </CardContent>

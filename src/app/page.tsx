@@ -20,7 +20,7 @@ export default function Home() {
               Zašto koristiti naše generatore?
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Sistematičan pristup koji štedi vrijeme, novac i osigurava kvalitetu
+              Sustavni pristup koji štedi vrijeme, novac i osigurava kvalitetu
             </p>
           </div>
 
@@ -77,14 +77,14 @@ export default function Home() {
               Spreman za početak?
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Koristi naše besplatne generatore i pretvori svoju ideju u konkretnu
+              Koristite naše besplatne generatore i pretvorite svoju ideju u konkretnu
               implementaciju već danas.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button size="lg" className="w-full sm:w-auto" asChild>
                 <Link href="/generators">
-                  Koristi generatore besplatno
+                  Koristite generatore besplatno
                 </Link>
               </Button>
 

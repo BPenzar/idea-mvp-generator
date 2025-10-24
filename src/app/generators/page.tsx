@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "AI Generatori za PRD Development - Idea & MVP Generator",
-  description: "Besplatni open-source generatori koji te vode kroz sistematičan proces od ideje do Claude Code-ready tehničke specifikacije. Discovery, Business PRD, Tech PRD i Interview Assistant.",
+  description: "Besplatni open-source generatori koji vas vode kroz sustavni proces od ideje do Claude Code-ready tehničke specifikacije. Discovery, Business PRD, Tech PRD i Interview Assistant.",
   keywords: [
     "Discovery Generator",
     "Business PRD Generator",
@@ -28,8 +28,8 @@ const generators = [
   {
     id: "discovery",
     title: "1. Discovery Generator",
-    description: "Evaluiraj i rankovi startup ideje kroz prošireni RICE framework",
-    content: "DISCOVERY GENERATOR - Idea Evaluation & Ranking\n\nSistematičan proces evaluacije startup ideja kroz RICE+ framework s 15 ključnih pitanja za kontekst, resurse, ciljeve i risk toleranciju. \n\nDobivaš objektivan scoring i preporuke za sljedeće korake. Koristi za evaluaciju 3-7 ideja i odabir najbolje za implementaciju.\n\nProcess traje 20-30 minuta.",
+    description: "Evaluirajte i rankirajte startup ideje kroz prošireni RICE framework",
+    content: "DISCOVERY GENERATOR - Idea Evaluation & Ranking\n\nSustavni proces evaluacije startup ideja kroz RICE+ framework s 15 ključnih pitanja za kontekst, resurse, ciljeve i toleranciju rizika. \n\nDobivate objektivan scoring i preporuke za sljedeće korake. Koristite za evaluaciju 3-7 ideja i odabir najbolje za implementaciju.\n\nProces traje 20-30 minuta.",
     filename: "1_Discovery_Generator.md",
     icon: "🔍",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/1_Discovery_Generator.md",
@@ -38,8 +38,8 @@ const generators = [
   {
     id: "business",
     title: "2. Business PRD Generator",
-    description: "Kreiraj sveobuhvatan Business PRD s MVP scope i ROI procjenom",
-    content: "BUSINESS PRD GENERATOR\n\nKreira sveobuhvatan Business Product Requirements Document na temelju odabrane ideje.\n\nUključuje problem statement, target users, solution design, MVP scope, business model, go-to-market strategiju i success metrike.\n\nDobivaš Go/Refine/Hold preporuku s obrazloženjem.",
+    description: "Kreirajte sveobuhvatan Business PRD s MVP scope i ROI procjenom",
+    content: "BUSINESS PRD GENERATOR\n\nKreira sveobuhvatan Business Product Requirements Document na temelju odabrane ideje.\n\nUključuje problem statement, target users, solution design, MVP scope, business model, go-to-market strategiju i success metrike.\n\nDobivate Go/Refine/Hold preporuku s obrazloženjem.",
     filename: "2_Business_PRD_Generator.md",
     icon: "📋",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/2_Business_PRD_Generator.md",
@@ -48,7 +48,7 @@ const generators = [
   {
     id: "tech",
     title: "3. Tech PRD Generator",
-    description: "Generiraj Claude Code-ready tehnički PRD s kompletnom arhitekturom",
+    description: "Generirajte Claude Code-ready tehnički PRD s kompletnom arhitekturom",
     content: "TECH PRD GENERATOR - Claude Code Ready\n\nKreira detaljni tehnički PRD optimiziran za Claude Code izvršavanje.\n\nUključuje tech stack decisions, system architecture, database schema, API design, file structure i implementation plan.\n\nOmogućuje Claude Code-u da implementira 80%+ funkcionalnosti bez dodatnih pitanja.",
     filename: "3_Tech_PRD_Generator.md",
     icon: "⚡",
@@ -59,7 +59,7 @@ const generators = [
     id: "interview",
     title: "4. PRD Interview Assistant",
     description: "Strukturirani interview za kreiranje PRD-a kroz razgovor",
-    content: "PRD INTERVIEW ASSISTANT\n\nVođeni razgovor koji te provodi kroz sve faze kreiranja PRD-a - od problema i rješenja do business modela i tech specifikacija.\n\nPrirodan interview flow umjesto dugačkih formi. Dobivaš kompletan PRD kroz 60-90 minuta razgovora.",
+    content: "PRD INTERVIEW ASSISTANT\n\nVođeni razgovor koji vas provodi kroz sve faze kreiranja PRD-a - od problema i rješenja do business modela i tech specifikacija.\n\nPrirodan interview flow umjesto dugačkih formi. Dobivate kompletan PRD kroz 60-90 minuta razgovora.",
     filename: "4_PRD_Interview.md",
     icon: "💬",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/4_PRD_Interview.md",
@@ -78,9 +78,9 @@ export default function GeneratorsPage() {
               AI Generatori za PRD Development
             </h1>
             <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
-              Besplatni open-source generatori koji te vode kroz sistematičan proces
+              Besplatni open-source generatori koji vas vode kroz sustavni proces
               od ideje do Claude Code-ready tehničke specifikacije. Copy-paste u svoj
-              omiljeni AI asistent i kreiraj profesionalne PRD-ove.
+              omiljeni AI asistent i kreirajte profesionalne PRD-ove.
             </p>
           </div>
 
@@ -128,7 +128,7 @@ export default function GeneratorsPage() {
 
             <p className="text-gray-600 max-w-2xl mx-auto mb-6">
               Radimo na web aplikaciji koja će automatski pokretati ove generatore
-              kroz LLM integraciju. Upload ovdje, dobij finalni PRD za Claude Code!
+              kroz LLM integraciju. Upload ovdje, dobijte finalni PRD za Claude Code!
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
