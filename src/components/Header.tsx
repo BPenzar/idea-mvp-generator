@@ -36,12 +36,11 @@ export default function Header() {
                 alt="BSP Lab logo"
                 width={32}
                 height={32}
-                className="h-8 w-8 rounded-lg object-cover"
+                className="h-8 w-8 rounded-full object-cover"
                 priority
               />
               <div className="flex flex-col">
                 <span className="text-sm font-semibold text-gray-900">BSP Lab</span>
-                <span className="text-xs text-gray-500">Digital Solutions</span>
               </div>
             </Link>
 
