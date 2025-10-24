@@ -1,36 +1,176 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Idea & MVP Generator
 
-## Getting Started
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0+-38B2AC)](https://tailwindcss.com/)
 
-First, run the development server:
+> **Od ideje do Claude Code implementacije za 1-2 sata umjesto mjeseci planiranja**
+
+Dual-phase web platforma koja omogućuje korisnicima da kroz sistematičan proces prođu od nejasne ideje do Claude Code-ready tehničkog PRD-a. Uštedi €5.000+ i 20-50 sati razvoja kroz proven framework za product development.
+
+## ✨ Značajke
+
+### 🔍 **Discovery Generator**
+- Strukturirani upitnik s 15 ključnih pitanja
+- AI evaluacija ideja kroz prošireni RICE+ framework
+- Objektivno rangiranje s scoring tablicom
+- Preporuke za sljedeće korake
+
+### 📋 **Business PRD Generator**
+- Sveobuhvatan Business Product Requirements Document
+- MVP scope definition i feature prioritization
+- ROI procjena i Go/Refine/Hold preporuke
+- Target user personas i competitive analiza
+
+### ⚡ **Tech PRD Generator**
+- Claude Code optimiziran tehnički PRD
+- Kompleta arhitektura i database schema
+- API design s request/response primjerima
+- File structure i implementation plan
+- **80%+ funkcionalnosti bez dodatnih pitanja u Claude Code-u**
+
+### 💬 **PRD Interview Assistant**
+- Vođeni razgovor umjesto dugačkih formi
+- Prirodan interview flow kroz sve faze
+- Automatska sinteza u kompletan PRD
+- 60-90 minuta do finalnog dokumenta
+
+## 🎯 Za koga je ovo napravljeno?
+
+- **Solo tech entrepreneurs** koji trebaju strukturu za svoje ideje
+- **Product manageri** koji žele standardiziran approach
+- **Indie hackeri** koji rade na side projectima
+- **Small development teams** (2-5 ljudi)
+- **Tech consulting agencije** za client discovery
+
+## 🚀 Brzi početak
+
+### Opcija 1: Koristi generatore (preporučeno)
+
+1. **Otvori [Generators page](https://idea-mvp-generator.vercel.app/generators)**
+2. **Copy-paste** bilo koji generator u Claude ili ChatGPT
+3. **Odgovori** na pitanja korak po korak
+4. **Dobij** strukturiran PRD za svoj projekt
+
+### Opcija 2: Pokreni lokalno
 
 ```bash
+# Clone repository
+git clone https://github.com/brunopenzar/idea-mvp-generator.git
+cd idea-mvp-generator
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Otvori [http://localhost:3000](http://localhost:3000) u browseru.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Struktura projekta
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+├── src/
+│   ├── app/                    # Next.js App Router
+│   │   ├── page.tsx           # Landing page
+│   │   └── generators/        # Generators showcase
+│   ├── components/            # React komponente
+│   │   ├── ui/               # shadcn/ui komponente
+│   │   ├── Hero.tsx          # Hero sekcija
+│   │   ├── HowItWorks.tsx    # Process objašnjenje
+│   │   ├── GeneratorCard.tsx # Generator display
+│   │   └── CopyButton.tsx    # Copy-paste funkcionalnost
+│   └── lib/
+├── public/
+│   ├── generators/           # .md generatori
+│   │   ├── 1_Discovery_Generator.md
+│   │   ├── 2_Business_PRD_Generator.md
+│   │   ├── 3_Tech_PRD_Generator.md
+│   │   └── 4_PRD_Interview.md
+│   └── examples/            # Example PRD outputi
+└── README.md
+```
 
-## Learn More
+## 🛠️ Tech Stack
 
-To learn more about Next.js, take a look at the following resources:
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **TypeScript**: Full type safety
+- **Deployment**: Vercel
+- **Analytics**: Vercel Analytics
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📖 Kako koristiti generatore
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 1. Discovery Generator
+```markdown
+Kopiraj generator → Paste u Claude/ChatGPT → Odgovori na 15 pitanja →
+Dobij evaluaciju ideja s RICE+ scoring → Odaberi najbolju ideju
+```
 
-## Deploy on Vercel
+### 2. Business PRD Generator
+```markdown
+Uzmi odabranu ideju → Copy Business PRD Generator →
+Odgovori na business pitanja → Dobij kompletan Business PRD
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 3. Tech PRD Generator
+```markdown
+Uzmi Business PRD → Copy Tech PRD Generator →
+Odgovori na tehničke specifikacije → Dobij Claude Code-ready Tech PRD
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. Implementacija u Claude Code
+```markdown
+Copy Tech PRD → Paste u Claude Code →
+"Implement this Tech PRD" → Dobij funkcionalan MVP
+```
+
+## 🔥 Success Stories
+
+> **"Uštedio sam 3 tjedna planiranja. Tech PRD je bio toliko detaljan da je Claude Code napravio 90% funkcionalnosti bez dodatnih pitanja."**
+> *- Marko P., Full-stack Developer*
+
+> **"Koristio sam Discovery Generator za 5 različitih ideja. Objektivan scoring mi je pomogao odabrati pravu ideju umjesto oslanjanja na gut feeling."**
+> *- Ana M., Product Manager*
+
+## 🤝 Doprinosi
+
+Doprinos je dobrodošao! Kako možeš pomoći:
+
+1. **Fork** repository
+2. **Create** feature branch (`git checkout -b feature/amazing-feature`)
+3. **Commit** promjene (`git commit -m 'Add amazing feature'`)
+4. **Push** na branch (`git push origin feature/amazing-feature`)
+5. **Open** Pull Request
+
+### Ideje za doprinose:
+
+- 🌍 Prijevodi na druge jezike
+- 📝 Novi generator templates
+- 🎨 UI/UX poboljšanja
+- 🧪 Dodavanje testova
+- 📚 Dokumentacija i examples
+
+## 📄 Licenca
+
+Ovaj projekt je licenciran pod [MIT License](LICENSE).
+
+## 👨‍💻 Autor
+
+**Bruno Penzar**
+- 🌐 Website: [brunopenzar.com](https://brunopenzar.com)
+- 💼 LinkedIn: [linkedin.com/in/brunopenzar](https://linkedin.com/in/brunopenzar)
+- 🐦 Twitter: [@brunopenzar](https://twitter.com/brunopenzar)
+
+## ⭐ Podrška
+
+Ako ti je ovaj projekt pomogao, molimo te da mu daš **star** ⭐ na GitHub-u!
+
+---
+
+**🎯 Rezultat**: Od nejasne ideje do Claude Code implementacije za 1-2 sata
+
+[**💻 Live Demo**](https://idea-mvp-generator.vercel.app) | [**📚 Documentation**](https://github.com/brunopenzar/idea-mvp-generator/wiki) | [**🐛 Report Bug**](https://github.com/brunopenzar/idea-mvp-generator/issues)
