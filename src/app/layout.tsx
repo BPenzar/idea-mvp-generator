@@ -27,9 +27,9 @@ export const metadata: Metadata = {
     "product discovery",
     "startup validation"
   ],
-  authors: [{ name: "Bruno Penzar", url: "https://brunopenzar.com" }],
-  creator: "Bruno Penzar",
-  publisher: "Bruno Penzar",
+  authors: [{ name: "BSP Lab", url: "https://github.com/BPenzar" }],
+  creator: "BSP Lab",
+  publisher: "BSP Lab",
   robots: {
     index: true,
     follow: true,
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Idea & MVP Generator - Od ideje do implementacije za 1-2h",
     description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi €5.000+ i 20-50 sati razvoja.",
-    creator: "@brunopenzar",
+    creator: "@Brunopenzar",
     images: ["/og-image.jpg"]
   },
   verification: {

@@ -57,7 +57,7 @@ Dual-phase web platforma koja omogućuje korisnicima da kroz sistematičan proce
 
 ```bash
 # Clone repository
-git clone https://github.com/brunopenzar/idea-mvp-generator.git
+git clone https://github.com/BPenzar/idea-mvp-generator.git
 cd idea-mvp-generator
 
 # Install dependencies
@@ -160,10 +160,11 @@ Ovaj projekt je licenciran pod [MIT License](LICENSE).
 
 ## 👨‍💻 Autor
 
-**Bruno Penzar**
-- 🌐 Website: [brunopenzar.com](https://brunopenzar.com)
-- 💼 LinkedIn: [linkedin.com/in/brunopenzar](https://linkedin.com/in/brunopenzar)
-- 🐦 Twitter: [@brunopenzar](https://twitter.com/brunopenzar)
+**BSP Lab • Bruno Penzar**
+- 📧 Email: [penzar.bruno@gmail.com](mailto:penzar.bruno@gmail.com)
+- 💼 LinkedIn: [linkedin.com/in/bruno-penzar](https://linkedin.com/in/bruno-penzar)
+- 🐦 Twitter: [@Brunopenzar](https://x.com/Brunopenzar)
+- 💻 GitHub: [github.com/BPenzar](https://github.com/BPenzar)
 
 ## ⭐ Podrška
 
@@ -173,4 +174,4 @@ Ako ti je ovaj projekt pomogao, molimo te da mu daš **star** ⭐ na GitHub-u!
 
 **🎯 Rezultat**: Od nejasne ideje do Claude Code implementacije za 1-2 sata
 
-[**💻 Live Demo**](https://idea-mvp-generator.vercel.app) | [**📚 Documentation**](https://github.com/brunopenzar/idea-mvp-generator/wiki) | [**🐛 Report Bug**](https://github.com/brunopenzar/idea-mvp-generator/issues)
+[**💻 Live Demo**](https://idea-mvp-generator.vercel.app) | [**📚 Documentation**](https://github.com/BPenzar/idea-mvp-generator/wiki) | [**🐛 Report Bug**](https://github.com/BPenzar/idea-mvp-generator/issues)
