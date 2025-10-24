@@ -7,10 +7,7 @@ export default function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-7xl">
-            Od ideje do proizvoda{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              za 1-2 sata
-            </span>
+            Od ideje do proizvoda za 2 sata!
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg">
