@@ -42,9 +42,9 @@ export default function HowItWorks() {
         </div>
 
         <div className="mx-auto mt-16 max-w-5xl">
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid gap-10 md:grid-cols-3 md:gap-8">
             {steps.map((step, index) => (
-              <div key={index} className="relative">
+              <div key={index} className="relative mx-auto max-w-sm md:max-w-none">
                 {/* Connection line */}
                 {index < steps.length - 1 && (
                   <div className="absolute top-12 left-1/2 hidden h-0.5 w-full bg-gradient-to-r from-gray-300 to-gray-300 md:block"></div>

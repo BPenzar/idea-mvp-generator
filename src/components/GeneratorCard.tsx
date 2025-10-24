@@ -25,14 +25,14 @@ export default function GeneratorCard({
   return (
     <Card className="h-full">
       <CardHeader>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
           <span className="text-2xl">{icon}</span>
-          <div>
+          <div className="space-y-1 text-left">
             <CardTitle className="text-xl">{title}</CardTitle>
-            <CardDescription className="mt-1">{description}</CardDescription>
+            <CardDescription className="text-sm leading-6">{description}</CardDescription>
           </div>
         </div>
-        <div className="flex items-center gap-2 text-sm text-gray-500">
+        <div className="flex flex-wrap items-center gap-2 text-sm text-gray-500">
           <span>⏱️</span>
           <span>{estimatedTime}</span>
         </div>
@@ -41,18 +41,18 @@ export default function GeneratorCard({
       <CardContent className="space-y-4">
         {/* Content Preview */}
         <div className="rounded-lg bg-gray-50 p-4">
-          <div className="mb-2 flex items-center justify-between">
+          <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <span className="text-sm font-medium text-gray-700">{filename}</span>
-            <CopyButton text={content} label="Copy Generator" />
+            <CopyButton text={content} label="Copy Generator" className="w-full sm:w-auto justify-center" />
           </div>
-          <div className="max-h-32 overflow-hidden text-xs text-gray-600">
-            <pre className="whitespace-pre-wrap font-mono">{content.slice(0, 200)}...</pre>
+          <div className="max-h-40 overflow-hidden text-xs text-gray-600">
+            <pre className="whitespace-pre-wrap font-mono leading-5">{content.slice(0, 200)}...</pre>
           </div>
         </div>
 
         {/* Action buttons */}
-        <div className="flex gap-2">
-          <Button variant="outline" size="sm" asChild className="flex-1">
+        <div className="flex flex-col gap-2 sm:flex-row">
+          <Button variant="outline" size="sm" asChild className="w-full sm:flex-1">
             <Link href={githubUrl} target="_blank">
               <span className="mr-2">📂</span>
               View on GitHub
@@ -61,9 +61,9 @@ export default function GeneratorCard({
         </div>
 
         {/* Usage instructions */}
-        <div className="rounded-lg bg-blue-50 p-3 text-sm">
+        <div className="rounded-lg bg-blue-50 p-4 text-sm">
           <div className="font-medium text-blue-900">Kako koristiti:</div>
-          <ol className="mt-1 list-decimal list-inside text-blue-800 space-y-1">
+          <ol className="mt-2 list-decimal list-inside space-y-1 text-blue-800">
             <li>Kliknite "Copy Generator"</li>
             <li>Otvorite Claude ili ChatGPT</li>
             <li>Paste generator i odgovorite na pitanja</li>

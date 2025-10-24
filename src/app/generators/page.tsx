@@ -72,12 +72,12 @@ export default function GeneratorsPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white border-b">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-center">
+        <div className="container mx-auto px-4 py-10 sm:px-6 lg:px-8 sm:py-12">
+          <div className="space-y-4 text-center">
             <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
               AI Generatori za PRD Development
             </h1>
-            <p className="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="mx-auto max-w-3xl text-base text-gray-600 sm:text-lg">
               Besplatni open-source generatori koji vas vode kroz sustavni proces
               od ideje do Claude Code-ready tehničke specifikacije. Copy-paste u svoj
               omiljeni AI asistent i kreirajte profesionalne PRD-ove.
@@ -85,8 +85,8 @@ export default function GeneratorsPage() {
           </div>
 
           {/* Navigation */}
-          <div className="mt-8 flex justify-center">
-            <Button variant="outline" asChild>
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <Button variant="outline" asChild className="w-full sm:w-auto">
               <Link href="/">
                 ← Povratak na početnu
               </Link>
@@ -96,8 +96,8 @@ export default function GeneratorsPage() {
       </div>
 
       {/* Generators Grid */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+      <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid gap-6 md:grid-cols-2 md:gap-8">
           {generators.map((generator) => (
             <GeneratorCard
               key={generator.id}
@@ -115,23 +115,23 @@ export default function GeneratorsPage() {
 
       {/* Coming Soon Section */}
       <div className="bg-white border-t">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 px-6 py-3 text-sm font-medium text-gray-700 mb-4">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 px-5 py-3 text-sm font-medium text-gray-700">
               <span>🚀</span>
               <span>Coming Soon</span>
             </div>
 
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            <h2 className="mb-4 text-2xl font-bold text-gray-900">
               Automatizirana verzija u razvoju
             </h2>
 
-            <p className="text-gray-600 max-w-2xl mx-auto mb-6">
+            <p className="mx-auto mb-6 max-w-2xl text-base text-gray-600 sm:text-lg">
               Radimo na web aplikaciji koja će automatski pokretati ove generatore
               kroz LLM integraciju. Upload ovdje, dobijte finalni PRD za Claude Code!
             </p>
 
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
+            <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500 sm:gap-4">
               <div className="flex items-center gap-2">
                 <div className="h-2 w-2 rounded-full bg-green-500"></div>
                 <span>Auto-save napretka</span>

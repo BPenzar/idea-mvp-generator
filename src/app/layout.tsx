@@ -70,6 +70,14 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://idea-mvp-generator.vercel.app"
+  },
+  icons: {
+    icon: [
+      { url: "/logo.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   }
 };
 
