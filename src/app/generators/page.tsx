@@ -58,7 +58,7 @@ const generators = [
   {
     id: "interview",
     title: "4. PRD Interview Assistant",
-    description: "Strukturirani interview za kreiranje PRD-a kroz razgovor",
+    description: "Strukturirani interview za kreiranje PRD-a kroz razgovor. Kombinacija Business i Tech PRD generatora.",
     content: "PRD INTERVIEW ASSISTANT\n\nVođeni razgovor koji vas provodi kroz sve faze kreiranja PRD-a - od problema i rješenja do business modela i tech specifikacija.\n\nPrirodan interview flow umjesto dugačkih formi. Dobivate kompletan PRD kroz 60-90 minuta razgovora.",
     filename: "4_PRD_Interview.md",
     icon: "💬",
