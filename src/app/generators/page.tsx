@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import Footer from "@/components/Footer";
 import GeneratorCard from "@/components/GeneratorCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "AI Generatori za PRD Development - Idea & MVP Generator",
@@ -148,6 +149,7 @@ export default function GeneratorsPage() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

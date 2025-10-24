@@ -4,7 +4,7 @@
 - **Background**: Product Manager s 5 godina iskustva u fintech sektoru, MBA, tehnički background u razvoju mobilnih aplikacija
 - **Resursi**: 15-20 sati tjedno, budget €3.000, radi solo ali ima pristup freelance developeru
 - **Ciljevi**: Kreirati dodatan prihod €2.000+/mjesec, dugoročno business rast koji može postati main focus
-- **Risk tolerance**: Umjereno - ima siguran posao, može riskirati do €5k bez velikih problema
+- **Risk tolerance**: Umjereno - ima siguran posao, može investirati ograničen vlastiti kapital bez velikih problema
 
 ## Evaluirane Ideje
 

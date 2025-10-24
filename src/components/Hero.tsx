@@ -7,12 +7,15 @@ export default function Hero() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <h1 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl lg:text-7xl">
-            Od ideje do proizvoda <br/>za 2 sata!
+            Idea & MVP Generator
           </h1>
-
+          <p className="mt-3 text-base font-semibold text-gray-500 sm:text-lg">
+            AI-powered PRD creation
+          </p>
+ 
           <p className="mx-auto mt-6 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg">
-            Besplatni AI generatori za provjeru i strukturiranje projekata.
-            Uštedite €5.000+ i 20-50 sati razvoja kroz sustavni proces
+            Od ideje do proizvoda za 2 sata! <br/> Besplatni AI generatori za provjeru i strukturiranje projekata.
+            Uštedite 20-50 sati razvoja kroz sustavni proces
             od Discovery-ja do Claude Code-ready Tech PRD-a.
           </p>
 

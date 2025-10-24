@@ -7,7 +7,7 @@
 
 > **Od ideje do Claude Code implementacije za 1-2 sata umjesto mjeseci planiranja**
 
-Dual-phase web platforma koja omogućuje korisnicima da kroz sistematičan proces prođu od nejasne ideje do Claude Code-ready tehničkog PRD-a. Uštedi €5.000+ i 20-50 sati razvoja kroz proven framework za product development.
+Dual-phase web platforma koja omogućuje korisnicima da kroz sistematičan proces prođu od nejasne ideje do Claude Code-ready tehničkog PRD-a. Uštedi 20-50 sati razvoja kroz provjeren framework za product development.
 
 ## ✨ Značajke
 

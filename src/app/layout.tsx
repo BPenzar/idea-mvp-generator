@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Idea & MVP Generator - Od ideje do Claude Code implementacije za 1-2h",
-  description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi €5.000+ i 20-50 sati razvoja kroz sistematičan proces od Discovery-ja do Claude Code-ready Tech PRD-a.",
+  description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi 20-50 sati razvoja kroz sistematičan proces od Discovery-ja do Claude Code-ready Tech PRD-a.",
   keywords: [
     "MVP generator",
     "product requirements document",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     locale: "hr_HR",
     url: "https://idea-mvp-generator.vercel.app",
     title: "Idea & MVP Generator - Od ideje do Claude Code implementacije",
-    description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi €5.000+ i 20-50 sati razvoja kroz sistematičan proces.",
+    description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi 20-50 sati razvoja kroz sistematičan proces.",
     siteName: "Idea & MVP Generator",
     images: [
       {
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Idea & MVP Generator - Od ideje do implementacije za 1-2h",
-    description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi €5.000+ i 20-50 sati razvoja.",
+    description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi 20-50 sati razvoja.",
     creator: "@Brunopenzar",
     images: ["/og-image.jpg"]
   },

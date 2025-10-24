@@ -8,7 +8,7 @@ Platforma se sastoji od dva dijela: (1) Open-source showcase s besplatnim genera
 
 ## Problem Statement
 
-**Problem**: Tech professionals i entrepreneurs troše 20-50 sati i €5.000+ na trial-and-error approach pri definiranju scope-a, architektude i implementacije novih projekata. 70% startup projekata failira zbog loše initial planiranja, unclear requirementsa i arhitektonskih greške koje se identificiraju prekasno.
+**Problem**: Tech professionals i entrepreneurs troše 20-50 sati i značajne budžete na trial-and-error approach pri definiranju scope-a, architekture i implementacije novih projekata. 70% startup projekata failira zbog loše initial planiranja, unclear requirementsa i arhitektonskih greške koje se identificiraju prekasno.
 
 **Target Users**:
 - Primary: Solo tech entrepreneurs (programeri, PMs, designeri) s 2-10 godina iskustva
