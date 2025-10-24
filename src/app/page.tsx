@@ -152,7 +152,14 @@ export default function Home() {
             <div className="text-gray-600">
               <p className="mb-2">
                 © 2025{" "}
-                <span className="font-semibold text-gray-900">BSP Lab</span>
+                <a
+                  href="https://www.bsp-lab.dev/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-gray-900 hover:text-blue-600 transition-colors"
+                >
+                  BSP Lab
+                </a>
                 {" "}• Bruno Penzar
               </p>
               <p className="text-sm">
