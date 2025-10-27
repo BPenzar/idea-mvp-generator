@@ -11,6 +11,7 @@ interface GeneratorCardProps {
   icon: string;
   githubUrl: string;
   estimatedTime: string;
+  instructions?: string[];
 }
 
 export default function GeneratorCard({
@@ -21,7 +22,15 @@ export default function GeneratorCard({
   icon,
   githubUrl,
   estimatedTime,
+  instructions,
 }: GeneratorCardProps) {
+  const usageSteps =
+    instructions ?? [
+      "Copy-paste generator u Claude ili ChatGPT",
+      "Odgovori na pitanja redom i dodaj kontekst gdje treba",
+      "Na kraju zatraži finalni dokument za export",
+    ];
+
   return (
     <Card className="h-full">
       <CardHeader>
@@ -64,10 +73,9 @@ export default function GeneratorCard({
         <div className="rounded-lg bg-blue-50 p-4 text-sm">
           <div className="font-medium text-blue-900">Kako koristiti:</div>
           <ol className="mt-2 list-decimal list-inside space-y-1 text-blue-800">
-            <li>Kliknite &quot;Copy Generator&quot;</li>
-            <li>Otvorite Claude ili ChatGPT</li>
-            <li>Paste generator i odgovorite na pitanja</li>
-            <li>Dobijte strukturiran output</li>
+            {usageSteps.map((step) => (
+              <li key={step}>{step}</li>
+            ))}
           </ol>
         </div>
       </CardContent>

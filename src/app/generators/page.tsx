@@ -35,6 +35,11 @@ const generatorConfigs = [
     icon: "🔍",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/1_Discovery_Generator.md",
     estimatedTime: "20-30 min",
+    instructions: [
+      "Copy-paste generator u Claude / ChatGPT",
+      "Odgovori na pitanja P1-P17 i kroz chat dogovori dodatne pojašnjavajuće detalje",
+      "Na kraju zatraži export Discovery outputa (Markdown ili docx)",
+    ],
   },
   {
     id: "business",
@@ -44,6 +49,12 @@ const generatorConfigs = [
     icon: "📋",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/2_Business_PRD_Generator.md",
     estimatedTime: "30-45 min",
+    instructions: [
+      "Copy-paste generator u Claude / ChatGPT",
+      "Dodaj kao attachment dokument iz Discovery generatora (1_Discovery_Generator.md)",
+      "Odgovori na pitanja P1-P9 i potvrdi sve sekcije Business PRD-a",
+      "Zatraži Business PRD output (Markdown / docx / pdf)",
+    ],
   },
   {
     id: "tech",
@@ -53,6 +64,12 @@ const generatorConfigs = [
     icon: "⚡",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/3_Tech_PRD_Generator.md",
     estimatedTime: "45-60 min",
+    instructions: [
+      "Copy-paste generator u Claude / ChatGPT",
+      "Dodaj kao attachment dokument iz Business PRD generatora (2_Business_PRD_Generator.md)",
+      "Prođi sve tehničke sekcije i potvrdi arhitekturu, API-je i plan",
+      "Zatraži Tech PRD output koji je spreman za development",
+    ],
   },
   {
     id: "interview",
@@ -62,6 +79,13 @@ const generatorConfigs = [
     icon: "💬",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/4_PRD_Interview.md",
     estimatedTime: "60-90 min",
+    instructions: [
+      "Copy-paste generator u Claude / ChatGPT (ili koristi kao dokument u voice modu)",
+      "Dodaj Discovery output (1_Discovery_Generator.md) kao attachment kako bi agent povukao ključne uvide",
+      "Ako su već kreirani Business i Tech PRD dokumenti, priloži ih kako bi intervju spojio sve informacije",
+      "Odgovaraj na pitanja kroz interview flow i poveži odgovore iz Business + Tech PRD generatora",
+      "Na kraju zatraži kompletan PRD paket (rezime + predložene eksperimente / scope)",
+    ],
   },
 ];
 
@@ -125,6 +149,7 @@ export default async function GeneratorsPage() {
               icon={generator.icon}
               githubUrl={generator.githubUrl}
               estimatedTime={generator.estimatedTime}
+              instructions={generator.instructions}
             />
           ))}
         </div>
