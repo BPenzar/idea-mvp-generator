@@ -3,6 +3,8 @@ import GeneratorCard from "@/components/GeneratorCard";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Metadata } from "next";
+import fs from "fs/promises";
+import path from "path";
 
 export const metadata: Metadata = {
   title: "AI Generatori za PRD Development - Idea & MVP Generator",
@@ -24,13 +26,11 @@ export const metadata: Metadata = {
   }
 };
 
-// Generator data with simple content
-const generators = [
+const generatorConfigs = [
   {
     id: "discovery",
     title: "1. Discovery Generator",
     description: "Evaluirajte i rankirajte startup ideje kroz prošireni RICE framework",
-    content: "DISCOVERY GENERATOR - Idea Evaluation & Ranking\n\nSustavni proces evaluacije startup ideja kroz RICE+ framework s 15 ključnih pitanja za kontekst, resurse, ciljeve i toleranciju rizika. \n\nDobivate objektivan scoring i preporuke za sljedeće korake. Koristite za evaluaciju 3-7 ideja i odabir najbolje za implementaciju.\n\nProces traje 20-30 minuta.",
     filename: "1_Discovery_Generator.md",
     icon: "🔍",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/1_Discovery_Generator.md",
@@ -40,7 +40,6 @@ const generators = [
     id: "business",
     title: "2. Business PRD Generator",
     description: "Kreirajte sveobuhvatan Business PRD s MVP scope i ROI procjenom",
-    content: "BUSINESS PRD GENERATOR\n\nKreira sveobuhvatan Business Product Requirements Document na temelju odabrane ideje.\n\nUključuje problem statement, target users, solution design, MVP scope, business model, go-to-market strategiju i success metrike.\n\nDobivate Go/Refine/Hold preporuku s obrazloženjem.",
     filename: "2_Business_PRD_Generator.md",
     icon: "📋",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/2_Business_PRD_Generator.md",
@@ -50,7 +49,6 @@ const generators = [
     id: "tech",
     title: "3. Tech PRD Generator",
     description: "Generirajte Claude Code-ready tehnički PRD s kompletnom arhitekturom",
-    content: "TECH PRD GENERATOR - Claude Code Ready\n\nKreira detaljni tehnički PRD optimiziran za Claude Code izvršavanje.\n\nUključuje tech stack decisions, system architecture, database schema, API design, file structure i implementation plan.\n\nOmogućuje Claude Code-u da implementira 80%+ funkcionalnosti bez dodatnih pitanja.",
     filename: "3_Tech_PRD_Generator.md",
     icon: "⚡",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/3_Tech_PRD_Generator.md",
@@ -60,7 +58,6 @@ const generators = [
     id: "interview",
     title: "4. PRD Interview Assistant",
     description: "Strukturirani interview za kreiranje PRD-a kroz razgovor. Kombinacija Business i Tech PRD generatora.",
-    content: "PRD INTERVIEW ASSISTANT\n\nVođeni razgovor koji vas provodi kroz sve faze kreiranja PRD-a - od problema i rješenja do business modela i tech specifikacija.\n\nPrirodan interview flow umjesto dugačkih formi. Dobivate kompletan PRD kroz 60-90 minuta razgovora.",
     filename: "4_PRD_Interview.md",
     icon: "💬",
     githubUrl: "https://github.com/BPenzar/idea-mvp-generator/blob/main/public/generators/4_PRD_Interview.md",
@@ -68,7 +65,26 @@ const generators = [
   },
 ];
 
-export default function GeneratorsPage() {
+async function getGeneratorContent(filename: string) {
+  const filePath = path.join(process.cwd(), "public", "generators", filename);
+
+  try {
+    const fileContent = await fs.readFile(filePath, "utf-8");
+    return fileContent;
+  } catch (error) {
+    console.error(`Failed to load generator file: ${filename}`, error);
+    return "Generator trenutno nije dostupan. Posjetite GitHub link iznad za najnoviju verziju.";
+  }
+}
+
+export default async function GeneratorsPage() {
+  const generators = await Promise.all(
+    generatorConfigs.map(async (generator) => ({
+      ...generator,
+      content: await getGeneratorContent(generator.filename),
+    }))
+  );
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -114,37 +130,35 @@ export default function GeneratorsPage() {
         </div>
       </div>
 
-      {/* Coming Soon Section */}
+      {/* Collaboration Invite */}
       <div className="bg-white border-t">
         <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-50 to-purple-50 px-5 py-3 text-sm font-medium text-gray-700">
-              <span>🚀</span>
-              <span>Coming Soon</span>
+            <div className="mb-3 text-sm font-semibold uppercase tracking-wide text-gray-500">
+              BSP Lab suradnja
             </div>
 
             <h2 className="mb-4 text-2xl font-bold text-gray-900">
-              Automatizirana verzija u razvoju
+              Pretvorite PRD u validiran roadmap i MVP isporuku
             </h2>
 
-            <p className="mx-auto mb-6 max-w-2xl text-base text-gray-600 sm:text-lg">
-              Radimo na web aplikaciji koja će automatski pokretati ove generatore
-              kroz LLM integraciju. Upload ovdje, dobijte finalni PRD za Claude Code!
+            <p className="mx-auto mb-6 max-w-3xl text-base text-gray-600 sm:text-lg">
+              Ako ste uz pomoć generatora dobili jasniji smjer, nastavimo razgovor. BSP Lab vodi timove od discoveryja
+              do implementacije kroz product strategiju, UX istraživanja i AI automatizaciju. Provjerite studije slučaja
+              i set usluga na službenoj stranici ili se javite direktno.
             </p>
 
-            <div className="flex flex-wrap justify-center gap-3 text-sm text-gray-500 sm:gap-4">
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                <span>Auto-save napretka</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-                <span>Claude + OpenAI integracija</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-                <span>One-click eksport</span>
-              </div>
+            <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+              <Button asChild size="lg">
+                <Link href="https://www.bsp-lab.dev" target="_blank" rel="noopener noreferrer">
+                  Posjeti bsp-lab.dev
+                </Link>
+              </Button>
+              <Button variant="outline" asChild size="lg">
+                <Link href="mailto:penzar.bruno@gmail.com">
+                  Kontakt mail
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
