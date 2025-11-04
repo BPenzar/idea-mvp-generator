@@ -62,7 +62,7 @@ export default function GeneratorCard({
         {/* Action buttons */}
         <div className="flex flex-col gap-2 sm:flex-row">
           <Button variant="outline" size="sm" asChild className="w-full sm:flex-1">
-            <Link href={githubUrl} target="_blank">
+            <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
               <span className="mr-2">📂</span>
               View on GitHub
             </Link>

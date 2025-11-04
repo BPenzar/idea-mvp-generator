@@ -28,6 +28,7 @@ export default function Header() {
             <Link
               href="https://www.bsp-lab.dev/"
               target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
             >
               {/* BSP Lab Logo */}
@@ -69,6 +70,7 @@ export default function Header() {
               <Link
                 href={externalLink.href}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
@@ -119,6 +121,7 @@ export default function Header() {
               <Link
                 href={externalLink.href}
                 target="_blank"
+                rel="noopener noreferrer"
                 onClick={handleCloseMobileMenu}
                 className="inline-flex items-center gap-2 rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-800"
               >

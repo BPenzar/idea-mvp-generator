@@ -27,7 +27,11 @@ export default function Hero() {
             </Button>
 
             <Button variant="outline" size="lg" className="w-full sm:w-auto" asChild>
-              <Link href="https://github.com/BPenzar/idea-mvp-generator" target="_blank">
+              <Link
+                href="https://github.com/BPenzar/idea-mvp-generator"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Vidi na GitHub-u
               </Link>
             </Button>

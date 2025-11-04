@@ -51,9 +51,7 @@ export const metadata: Metadata = {
     siteName: "Idea & MVP Generator",
     images: [
       {
-        url: "/og-image.jpg",
-        width: 1200,
-        height: 630,
+        url: "/logo.png",
         alt: "Idea & MVP Generator - AI generatori za PRD development"
       }
     ]
@@ -63,7 +61,7 @@ export const metadata: Metadata = {
     title: "Idea & MVP Generator - Od ideje do implementacije za 1-2h",
     description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi 20-50 sati razvoja.",
     creator: "@Brunopenzar",
-    images: ["/og-image.jpg"]
+    images: ["/logo.png"]
   },
   verification: {
     google: "your-google-verification-code"
