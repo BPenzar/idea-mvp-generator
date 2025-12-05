@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "AI Generatori za PRD Development",
     description: "Besplatni open-source generatori za kreiranje profesionalnih PRD-ova",
-    url: "https://idea-mvp-generator.vercel.app/generators"
+    url: "https://mvp.bsp-lab.dev/generators"
   }
 };
 

@@ -14,6 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mvp.bsp-lab.dev"),
   title: "Idea & MVP Generator - Od ideje do Claude Code implementacije za 1-2h",
   description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi 20-50 sati razvoja kroz sistematičan proces od Discovery-ja do Claude Code-ready Tech PRD-a.",
   keywords: [
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "hr_HR",
-    url: "https://idea-mvp-generator.vercel.app",
+    url: "https://mvp.bsp-lab.dev",
     title: "Idea & MVP Generator - Od ideje do Claude Code implementacije",
     description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi 20-50 sati razvoja kroz sistematičan proces.",
     siteName: "Idea & MVP Generator",
@@ -67,7 +68,7 @@ export const metadata: Metadata = {
     google: "your-google-verification-code"
   },
   alternates: {
-    canonical: "https://idea-mvp-generator.vercel.app"
+    canonical: "https://mvp.bsp-lab.dev"
   },
   icons: {
     icon: [
