@@ -5,27 +5,30 @@ import { Button } from "@/components/ui/button";
 import CopyButton from "./CopyButton";
 import Link from "next/link";
 import { useLanguage } from "@/i18n/LanguageContext";
-import type { GeneratorId } from "@/i18n/translations";
+import { defaultLanguage, type GeneratorId, type Language } from "@/i18n/translations";
 
 interface GeneratorCardProps {
   id: GeneratorId;
-  content: string;
-  filename: string;
+  contentByLanguage: Record<Language, string>;
+  filenameByLanguage: Record<Language, string>;
   icon: string;
-  githubUrl: string;
+  githubUrlByLanguage: Record<Language, string>;
 }
 
 export default function GeneratorCard({
   id,
-  content,
-  filename,
+  contentByLanguage,
+  filenameByLanguage,
   icon,
-  githubUrl,
+  githubUrlByLanguage,
 }: GeneratorCardProps) {
-  const { strings } = useLanguage();
+  const { language, strings } = useLanguage();
   const generator = strings.generators.items[id];
   const cardLabels = strings.generators.card;
   const usageSteps = generator.instructions;
+  const content = contentByLanguage[language] ?? contentByLanguage[defaultLanguage];
+  const filename = filenameByLanguage[language] ?? filenameByLanguage[defaultLanguage];
+  const githubUrl = githubUrlByLanguage[language] ?? githubUrlByLanguage[defaultLanguage];
 
   return (
     <Card className="h-full">
