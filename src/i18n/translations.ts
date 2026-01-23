@@ -112,7 +112,7 @@ export const translations = {
       },
       items: {
         discovery: {
-          title: "1. Discovery Generator",
+          title: "1. Discovery generator",
           description: "Evaluirajte i rankirajte startup ideje kroz prošireni RICE framework",
           estimatedTime: "20-30 min",
           instructions: [
@@ -122,7 +122,7 @@ export const translations = {
           ],
         },
         business: {
-          title: "2. Business PRD Generator",
+          title: "2. Business PRD generator",
           description: "Kreirajte sveobuhvatan Business PRD s MVP scope i ROI procjenom",
           estimatedTime: "30-45 min",
           instructions: [
@@ -133,7 +133,7 @@ export const translations = {
           ],
         },
         tech: {
-          title: "3. Tech PRD Generator",
+          title: "3. Tech PRD generator",
           description: "Generirajte Claude Code-ready tehnički PRD s kompletnom arhitekturom",
           estimatedTime: "45-60 min",
           instructions: [
@@ -144,7 +144,7 @@ export const translations = {
           ],
         },
         interview: {
-          title: "4. PRD Interview Assistant",
+          title: "4. PRD Interview assistant",
           description:
             "Strukturirani interview za kreiranje PRD-a kroz razgovor. Kombinacija Business i Tech PRD generatora.",
           estimatedTime: "60-90 min",
@@ -194,7 +194,7 @@ export const translations = {
       },
       items: {
         discovery: {
-          title: "1. Discovery Generator",
+          title: "1. Discovery-Generator",
           description: "Bewerte und priorisiere Startup-Ideen mit einem erweiterten RICE-Framework",
           estimatedTime: "20-30 min",
           instructions: [
@@ -204,7 +204,7 @@ export const translations = {
           ],
         },
         business: {
-          title: "2. Business PRD Generator",
+          title: "2. Business-PRD-Generator",
           description: "Erstelle ein umfassendes Business-PRD mit MVP-Umfang und ROI-Schätzung",
           estimatedTime: "30-45 min",
           instructions: [
@@ -215,7 +215,7 @@ export const translations = {
           ],
         },
         tech: {
-          title: "3. Tech PRD Generator",
+          title: "3. Tech-PRD-Generator",
           description: "Erstelle ein Claude-Code-fertiges technisches PRD mit kompletter Architektur",
           estimatedTime: "45-60 min",
           instructions: [
@@ -226,7 +226,7 @@ export const translations = {
           ],
         },
         interview: {
-          title: "4. PRD Interview Assistant",
+          title: "4. PRD-Interview-Assistent",
           description:
             "Strukturiertes Interview zur PRD-Erstellung im Gespräch. Kombination aus Business- und Tech-PRD-Generator.",
           estimatedTime: "60-90 min",
