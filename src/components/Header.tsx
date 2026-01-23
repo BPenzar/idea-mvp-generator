@@ -1,25 +1,165 @@
 'use client';
 
-import { useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "@/i18n/LanguageContext";
+import type { Language } from "@/i18n/translations";
+
+const LanguageSwitcher = ({
+  activeLang,
+  onChange,
+  labels,
+  languages,
+  className,
+  placement = "below",
+}: {
+  activeLang: Language;
+  onChange: (lang: Language) => void;
+  labels: { button: string; menu: string };
+  languages: Language[];
+  className?: string;
+  placement?: "below" | "right" | "inline";
+}) => {
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const options = languages.filter((lang) => lang !== activeLang);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const optionRefs = useRef<Array<HTMLButtonElement | null>>([]);
+  const menuId = useId();
+
+  const focusOption = (index: number) => {
+    const count = optionRefs.current.length;
+    if (!count) {
+      return;
+    }
+    const nextIndex = (index + count) % count;
+    optionRefs.current[nextIndex]?.focus();
+  };
+
+  const handleTriggerKeyDown = (event: React.KeyboardEvent<HTMLButtonElement>) => {
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      setIsLangOpen(true);
+      requestAnimationFrame(() => {
+        focusOption(event.key === "ArrowDown" ? 0 : options.length - 1);
+      });
+    }
+  };
+
+  const handleMenuKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      setIsLangOpen(false);
+      triggerRef.current?.focus();
+      return;
+    }
+
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      const currentIndex = optionRefs.current.findIndex((el) => el === document.activeElement);
+      const delta = event.key === "ArrowDown" ? 1 : -1;
+      focusOption(currentIndex + delta);
+    }
+  };
+
+  const handleSelect = (lang: Language) => {
+    onChange(lang);
+    setIsLangOpen(false);
+  };
+
+  useEffect(() => {
+    if (!isLangOpen) {
+      return;
+    }
+
+    const handleOutsideClick = (event: MouseEvent | TouchEvent) => {
+      const target = event.target as Node | null;
+      if (containerRef.current && target && !containerRef.current.contains(target)) {
+        setIsLangOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleOutsideClick);
+    document.addEventListener("touchstart", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+      document.removeEventListener("touchstart", handleOutsideClick);
+    };
+  }, [isLangOpen]);
+
+  const containerClassName =
+    placement === "inline"
+      ? `flex items-center gap-2 ${className ?? ""}`
+      : `relative ${className ?? ""}`;
+
+  return (
+    <div ref={containerRef} className={containerClassName}>
+      <button
+        ref={triggerRef}
+        type="button"
+        onClick={() => setIsLangOpen((open) => !open)}
+        aria-label={labels.button}
+        aria-haspopup="menu"
+        aria-expanded={isLangOpen}
+        aria-controls={menuId}
+        onKeyDown={handleTriggerKeyDown}
+        className={`h-9 w-9 rounded-full border text-xs font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 ${
+          isLangOpen
+            ? "border-gray-900 text-gray-900 bg-gray-100"
+            : "border-gray-200 text-gray-600 hover:text-gray-900 hover:border-gray-300"
+        }`}
+      >
+        {activeLang}
+      </button>
+
+      {isLangOpen && (
+        <div
+          id={menuId}
+          role="menu"
+          aria-label={labels.menu}
+          onKeyDown={handleMenuKeyDown}
+          className={`flex gap-2 border border-gray-200 bg-white shadow-lg ${
+            placement === "inline"
+              ? "ml-2 flex-row rounded-full px-2 py-1"
+              : placement === "right"
+                ? "absolute left-full top-1/2 ml-2 -translate-y-1/2 flex-row rounded-2xl p-2"
+                : "absolute left-1/2 top-full mt-2 -translate-x-1/2 flex-col rounded-2xl p-2"
+          }`}
+        >
+          {options.map((lang, index) => (
+            <button
+              key={lang}
+              type="button"
+              role="menuitem"
+              onClick={() => handleSelect(lang)}
+              ref={(node) => {
+                optionRefs.current[index] = node;
+              }}
+              className="h-9 w-9 rounded-full border border-transparent text-xs font-semibold text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 hover:border-gray-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400"
+            >
+              {lang}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const navLinks = [
-    { href: "/", label: "Početna" },
-    { href: "/generators", label: "Generatori" },
-  ];
+  const { language, setLanguage, strings, languages } = useLanguage();
 
   const externalLink = {
     href: "https://github.com/BPenzar/idea-mvp-generator",
-    label: "GitHub",
+    label: strings.nav.github,
   };
 
   const feedbackLink = {
     href: "https://qr.bsp-lab.dev/f/vy9My9Xa",
-    label: "Feedback",
+    label: strings.nav.feedback,
   };
 
   const handleCloseMobileMenu = () => setIsMobileMenuOpen(false);
@@ -55,23 +195,19 @@ export default function Header() {
 
             {/* Project Name */}
             <div className="hidden flex-col sm:flex">
-              <span className="text-sm font-medium text-gray-900">Idea & MVP Generator</span>
-              <span className="text-xs text-gray-500">AI-powered PRD creation</span>
+              <span className="text-sm font-medium text-gray-900">
+                {strings.header.projectName}
+              </span>
+              <span className="text-xs text-gray-500">{strings.header.projectTagline}</span>
             </div>
           </div>
 
           {/* Navigation */}
           <div className="flex items-center gap-3">
-            <nav className="hidden items-center space-x-6 md:flex">
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  className="text-sm font-medium text-gray-700 transition-colors hover:text-gray-900"
-                >
-                  {label}
-                </Link>
-              ))}
+            <nav
+              className="hidden items-center space-x-4 md:flex"
+              aria-label={strings.nav.mainLabel}
+            >
               <Link
                 href={externalLink.href}
                 target="_blank"
@@ -87,16 +223,26 @@ export default function Header() {
                 href={feedbackLink.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={strings.nav.feedbackAria}
                 className="text-sm font-medium transition-colors hover:opacity-75"
                 style={{ color: '#64748B' }}
               >
                 {feedbackLink.label}
               </Link>
+              <LanguageSwitcher
+                activeLang={language}
+                onChange={(lang) => setLanguage(lang)}
+                labels={{
+                  button: strings.nav.languageSwitcherLabel,
+                  menu: strings.nav.languageMenuLabel,
+                }}
+                languages={languages}
+              />
             </nav>
 
             <button
               type="button"
-              aria-label="Toggle navigation"
+              aria-label={strings.nav.menuToggle}
               aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
               className="inline-flex items-center justify-center rounded-md border border-gray-200 p-2 text-gray-700 transition-colors hover:bg-gray-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-gray-400 md:hidden"
@@ -122,16 +268,6 @@ export default function Header() {
         <div className="border-t border-gray-200 bg-white md:hidden">
           <div className="container mx-auto px-4 pb-4 pt-3">
             <nav className="flex flex-col space-y-2">
-              {navLinks.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  onClick={handleCloseMobileMenu}
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:bg-gray-100 hover:text-gray-900"
-                >
-                  {label}
-                </Link>
-              ))}
               <Link
                 href={externalLink.href}
                 target="_blank"
@@ -149,11 +285,26 @@ export default function Header() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={handleCloseMobileMenu}
+                aria-label={strings.nav.feedbackAria}
                 className="rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-gray-100"
                 style={{ color: '#64748B' }}
               >
                 {feedbackLink.label}
               </Link>
+              <LanguageSwitcher
+                activeLang={language}
+                onChange={(lang) => {
+                  setLanguage(lang);
+                  handleCloseMobileMenu();
+                }}
+                labels={{
+                  button: strings.nav.languageSwitcherLabel,
+                  menu: strings.nav.languageMenuLabel,
+                }}
+                className="mt-2"
+                placement="inline"
+                languages={languages}
+              />
             </nav>
           </div>
         </div>

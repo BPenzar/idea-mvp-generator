@@ -1,4 +1,10 @@
+"use client";
+
+import { useLanguage } from "@/i18n/LanguageContext";
+
 export default function Footer() {
+  const { strings } = useLanguage();
+
   return (
     <footer className="border-t bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
@@ -78,16 +84,16 @@ export default function Footer() {
               • Bruno Penzar
             </p>
             <p className="text-sm">
-              Open source na{" "}
+              {strings.footer.openSourceLabel}{" "}
               <a
                 href="https://github.com/BPenzar/idea-mvp-generator"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-medium text-gray-900 hover:text-blue-600 underline"
               >
-                GitHub-u
+                {strings.footer.githubLabel}
               </a>{" "}
-              • Kontakt:{" "}
+              • {strings.footer.contactLabel}{" "}
               <a
                 href="mailto:penzar.bruno@gmail.com"
                 className="font-medium text-gray-900 hover:text-blue-600"

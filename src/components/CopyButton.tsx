@@ -6,10 +6,18 @@ import { Button } from "@/components/ui/button";
 interface CopyButtonProps {
   text: string;
   label?: string;
+  copiedLabel?: string;
+  ariaLabel?: string;
   className?: string;
 }
 
-export default function CopyButton({ text, label = "Copy", className }: CopyButtonProps) {
+export default function CopyButton({
+  text,
+  label = "Copy",
+  copiedLabel = "Copied!",
+  ariaLabel,
+  className,
+}: CopyButtonProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -28,11 +36,12 @@ export default function CopyButton({ text, label = "Copy", className }: CopyButt
       variant={copied ? "default" : "outline"}
       size="sm"
       className={className}
+      aria-label={ariaLabel ?? label}
     >
       {copied ? (
         <>
           <span className="mr-2">✓</span>
-          Copied!
+          {copiedLabel}
         </>
       ) : (
         <>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/Header";
+import Providers from "@/components/Providers";
+import { defaultLanguage, translations } from "@/i18n/translations";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,10 +15,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const meta = translations[defaultLanguage].meta;
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://mvp.bsp-lab.dev"),
-  title: "Idea & MVP Generator - Od ideje do Claude Code implementacije za 1-2h",
-  description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi 20-50 sati razvoja kroz sistematičan proces od Discovery-ja do Claude Code-ready Tech PRD-a.",
+  title: meta.title,
+  description: meta.description,
   keywords: [
     "MVP generator",
     "product requirements document",
@@ -47,8 +51,8 @@ export const metadata: Metadata = {
     type: "website",
     locale: "hr_HR",
     url: "https://mvp.bsp-lab.dev",
-    title: "Idea & MVP Generator - Od ideje do Claude Code implementacije",
-    description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi 20-50 sati razvoja kroz sistematičan proces.",
+    title: meta.title,
+    description: meta.description,
     siteName: "Idea & MVP Generator",
     images: [
       {
@@ -59,8 +63,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Idea & MVP Generator - Od ideje do implementacije za 1-2h",
-    description: "Besplatni AI generatori za validaciju i strukturiranje projekata. Uštedi 20-50 sati razvoja.",
+    title: meta.title,
+    description: meta.description,
     creator: "@Brunopenzar",
     images: ["/logo.png"]
   },
@@ -90,8 +94,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Header />
-        {children}
+        <Providers>
+          <Header />
+          {children}
+        </Providers>
       </body>
     </html>
   );
