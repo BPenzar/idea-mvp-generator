@@ -20,6 +20,8 @@ export const translations = {
       languageMenuLabel: "Language selection",
     },
     generators: {
+      intro:
+        "A PRD (Product Requirements Document) describes a product's goals, requirements, and scope.",
       unavailable:
         "Generator is currently unavailable. Visit the GitHub link above for the latest version.",
       card: {
@@ -102,6 +104,8 @@ export const translations = {
       languageMenuLabel: "Izbor jezika",
     },
     generators: {
+      intro:
+        "PRD (Product Requirements Document) je dokument koji opisuje ciljeve, zahtjeve i opseg proizvoda.",
       unavailable:
         "Generator trenutno nije dostupan. Posjetite GitHub link iznad za najnoviju verziju.",
       card: {
@@ -184,6 +188,8 @@ export const translations = {
       languageMenuLabel: "Sprachauswahl",
     },
     generators: {
+      intro:
+        "Ein PRD (Product Requirements Document) beschreibt Ziele, Anforderungen und Umfang eines Produkts.",
       unavailable:
         "Der Generator ist derzeit nicht verfügbar. Besuche den GitHub-Link oben für die neueste Version.",
       card: {

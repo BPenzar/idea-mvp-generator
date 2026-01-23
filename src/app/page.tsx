@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import GeneratorCard from "@/components/GeneratorCard";
+import GeneratorsIntro from "@/components/GeneratorsIntro";
 import type { Metadata } from "next";
 import fs from "fs/promises";
 import path from "path";
@@ -120,6 +121,7 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <GeneratorsIntro />
         <div className="grid gap-6 md:grid-cols-2 md:gap-8">
           {generators.map((generator) => (
             <GeneratorCard
